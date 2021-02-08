@@ -5,8 +5,12 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
-app.get("/", (req, res) => {});
+const data = require("./data.json");
 
-app.listen(process.env.PORT || 3000, () => {
+app.get("/", (req, res) => {
+   res.json(data);
+});
+
+app.listen(process.env.PORT || 3100, () => {
    console.log("Server started");
 });
